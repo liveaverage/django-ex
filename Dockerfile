@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/python-38
+FROM quay.io/centos7/s2i-base-centos7
 
 # Add application sources to a directory that the assemble script expects them
 # and set permissions so that the container runs without root access
