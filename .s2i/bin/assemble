@@ -1,8 +1,9 @@
 #!/bin/bash
 echo "Before assembling"
-echo "Installing some prereq sys packages"
-sudo yum install -y epel-release
-sudo yum install -y unixODBC-devel
+
+#echo "Installing some prereq sys packages"
+#sudo yum install -y epel-release
+#sudo yum install -y unixODBC-devel
 
 /usr/libexec/s2i/assemble
 rc=$?
