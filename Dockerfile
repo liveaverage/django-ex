@@ -1,9 +1,11 @@
-FROM registry.access.redhat.com/ubi8/python-38 as cs2i
+FROM registry.access.redhat.com/ubi8/python-38
 
 # Add application sources to a directory that the assemble script expects them
 # and set permissions so that the container runs without root access
 USER 0
-ADD app-src /tmp/src
+ADD . /tmp/src
+RUN yum install -y epel-release && \
+    yum install -y unixODBC-devel
 RUN /usr/bin/fix-permissions /tmp/src
 USER 1001
 
